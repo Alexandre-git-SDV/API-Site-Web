@@ -1,147 +1,191 @@
+/* Importation des polices de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
-html{
-    scroll-behavior: smooth;
+
+/* Définition des styles pour l'élément <html> */
+html {
+    scroll-behavior: smooth; /* Comportement de défilement fluide */
 }
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Montserrat', sans-serif;
-}
-nav{
-    display:flex;
-    flex-wrap:wrap;
+
+/* Définition des styles pour l'élément <body> */
+body {
+    margin: 0px; /* Marge extérieure nul */
+    padding: 0px; /* Espacement intérieur nul */
+    font-family: 'Montserrat', sans-serif; /* Utilisation de la police Montserrat ou une police sans-serif par défaut */
+
     justify-content: center;
-    align-items: center;
-    border-bottom: 5px solid #b43daa;
-}
-nav h1{
-    color: #b43daa;
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-}
-nav .onglets{
-    margin-top: 3px;
-    margin-left: 300px;
-}
-nav .onglets a{
-    text-decoration: none;
-    color: #000;
-    margin-right: 10px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 5px;
+    background-image: linear-gradient(180deg, #ffffff 0%, #fda085 100%);
+    
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #000;
-    background-size: cover;
-    color: #fff;
-    padding: 40px;
-}
-header h1{
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
-}
-header h4{
-    margin-top: -20px;
-    font-size: 20px;
-    text-align: center;
-    border-bottom: 1px solid #fff;
-}
-header button{
-    padding: 10px 20px;
-    background-color: #fff;
-    color:#000;
-    border:none;
-    margin-bottom: 30px;
-    outline:none;
-    font-size: 20px;
-    font-family: 'Playfair Display', serif;
-    cursor: pointer;
+/* Définition des styles pour l'élément <nav> */
+nav {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Les objets sont centrés horizontalement */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    border-bottom: 5px solid #b43daa; /* Bordure inférieure de 5 pixels solide avec la couleur #b43daa */
 }
 
-.main{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.main .content .card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom:20px;
-}
-.main .content .card .left{
-   flex: 0 0 30%;
-   padding: 20px;
-   background-color:black;
-   color:#fff;
-}
-.main .content .card .right img{
-    height:300px;
-    width: 400px;
-    margin-top: 5px;
+/* Définition des styles pour les titres h1 à l'intérieur de l'élément <nav> */
+nav h1 {
+    color: #b43daa; /* Couleur du texte rose */
+    font-family: 'Playfair Display', serif; /* Utilisation de la police Playfair Display ou une police serif par défaut */
+    font-size: 30px; /* Taille de police de 30 pixels */
 }
 
-footer{
-    margin-top: 40px;
-    border-top: 5px solid #b43daa;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
-    padding: 30px 100px;;
-}
-footer h1{
-    font-family: 'Playfair Display', serif;
-    border-bottom: 1px solid white;
-    width: 20%;
-    padding-bottom: 5px;
-}
-footer .services{
-    margin-top: -10px;
-    display:flex;
-    flex-wrap:wrap;
-}
-footer .services .service{
-    margin-right: 30px;
-}
-footer .services .service p{
-    max-width: 300px;
-}
-footer #contact{
-    color: #9bcdff;
+/* Définition des styles pour les éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
+nav .onglets {
+    margin-top: 3px; /* Marge supérieure de 3 pixels */
+    margin-left: 300px; /* Marge gauche de 300 pixels */
 }
 
-@media screen and (max-width:680px){
+/* Définition des styles pour les liens <a> à l'intérieur des éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
+nav .onglets a {
+    text-decoration: none; /* Pas de décoration de texte (soulignement par défaut) */
+    color: #000; /* Couleur du texte noir */
+    margin-right: 10px; /* Marge droite de 10 pixels */
+    border-bottom: 1px solid #000; /* Bordure inférieure de 1 pixel solide avec la couleur noire */
+    padding-bottom: 5px; /* Espacement intérieur inférieur de 5 pixels */
+}
+
+/* Définition des styles pour l'élément <header> */
+header {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-direction: column; /* Les objets seront disposés en colonne */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    background: #000; /* Couleur de fond noire */
+    background-size: cover; /* La taille de l'image de fond est ajustée pour couvrir tout l'élément */
+    color: #fff; /* Couleur du texte blanc */
+    padding: 40px; /* Espacement intérieur de 40 pixels */
+}
+
+/* Définition des styles pour les titres h1 à l'intérieur de l'élément <header> */
+header h1 {
+    font-family: 'Playfair Display', serif; /* Police de caractères 'Playfair Display' ou une police de caractères de type serif */
+    font-size: 50px; /* Taille de police de 50 pixels */
+}
+
+/* Définition des styles pour les titres h4 à l'intérieur de l'élément <header> */
+header h4 {
+    margin-top: -20px; /* Marge supérieure de -20 pixels pour superposer le titre sur le titre précédent */
+    font-size: 20px; /* Taille de police de 20 pixels */
+    text-align: center; /* Alignement du texte au centre */
+    border-bottom: 1px solid #fff; /* Bordure inférieure de 1 pixel solide avec la couleur blanche */
+}
+
+/* Définition des styles pour les boutons à l'intérieur de l'élément <header> */
+header button {
+    padding: 10px 20px; /* Espacement intérieur de 10 pixels en haut et en bas, 20 pixels à gauche et à droite */
+    background-color: #ffffff; /* Couleur de fond blanche */
+    color: #000; /* Couleur du texte noir */
+    border: none; /* Pas de bordure */
+    margin-bottom: 30px; /* Marge inférieure de 30 pixels */
+    outline: none; /* Pas de contour */
+    font-size: 20px; /* Taille de police de 20 pixels */
+    font-family: 'Playfair Display', serif; /* Police de caractères 'Playfair Display' ou une police de caractères de type serif */
+    cursor: pointer; /* Curseur de la souris de type pointer */
+}
+
+/* Définition des styles pour l'élément avec la classe 'main' */
+.main {
+    margin-top: 40px; /* Marge supérieure de 40 pixels */
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-direction: column; /* disposition en colonne */
+    align-items: center; /* Alignement des enfants au centre sur l'axe transversal */
+}
+
+/* Définition des styles pour les éléments avec la classe 'card' à l'intérieur de l'élément avec la classe 'content' à l'intérieur de l'élément avec la classe 'main' */
+.main .content .card {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Les objets sont centrés horizontalement */
+    margin-bottom: 20px; /* Marge inférieure de 20 pixels */
+}
+
+/* Définition des styles pour les éléments avec la classe 'left' à l'intérieur de l'élément avec la classe 'card' à l'intérieur de l'élément avec la classe 'content' à l'intérieur de l'élément avec la classe 'main' */
+.main .content .card .left {
+    flex: 0 0 30%; /* Le conteneur occupe 30% de l'espace disponible, sans extension ni rétrécissement */
+    padding: 20px; /* Espacement intérieur de 20 pixels */
+    background-color: black; /* Couleur de fond noire */
+    color: #fff; /* Couleur du texte blanc */
+}
+
+/* Définition des styles pour les images à l'intérieur de l'élément avec la classe 'right' qui est à l'intérieur de l'élément avec la classe 'card' qui est à l'intérieur de l'élément avec la classe 'content' qui est à l'intérieur de l'élément avec la classe 'main' */
+.main .content .card .right img {
+    height: 300px; /* Hauteur de l'image de 300 pixels */
+    width: 400px; /* Largeur de l'image de 400 pixels */
+    margin-top: 5px; /* Marge supérieure de 5 pixels */
+}
+
+/* Définition des styles pour l'élément <footer> */
+footer {
+    margin-top: 40px; /* Marge supérieure de 40 pixels */
+    border-top: 5px solid #b43daa; /* Bordure supérieure de 5 pixels solide avec la couleur #b43daa */
+    background-color: rgb(0, 0, 0); /* Couleur de fond noire */
+    color: #fff; /* Couleur du texte blanc */
+    padding: 30px 100px; /* Espacement intérieur de 30 pixels en haut et en bas, 100 pixels à gauche et à droite */
+}
+
+/* Définition des styles pour les titres h1 à l'intérieur de l'élément <footer> */
+footer h1 {
+    font-family: 'Playfair Display', serif; /* Police de caractères 'Playfair Display' ou une police de caractères de type serif */
+    border-bottom: 1px solid white; /* Bordure inférieure de 1 pixel solide avec la couleur blanche */
+    width: 20%; /* Largeur de 20% par rapport à son conteneur parent */
+    padding-bottom: 5px; /* Espacement inférieur de 5 pixels */
+}
+
+/* Définition des styles pour les éléments avec la classe 'services' à l'intérieur de l'élément <footer> */
+footer .services {
+    margin-top: -10px; /* Marge supérieure de -10 pixels pour compenser la marge par défaut */
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+}
+
+/* Définition des styles pour les éléments avec la classe 'service' à l'intérieur des éléments avec la classe 'services' à l'intérieur de l'élément <footer> */
+footer .services .service {
+    margin-right: 30px; /* Marge à droite de 30 pixels */
+}
+
+/* Définition des styles pour les paragraphes <p> à l'intérieur des éléments avec la classe 'service' à l'intérieur des éléments avec la classe 'services' à l'intérieur de l'élément <footer> */
+footer .services .service p {
+    max-width: 300px; /* Largeur maximale de 300 pixels */
+}
+
+/* Définition des styles pour l'élément avec l'ID 'contact' à l'intérieur de l'élément <footer> */
+footer #contact {
+    color: #9bcdff; /* Couleur du texte bleu clair */
+}
+
+/* Définition des styles pour les règles qui s'appliquent uniquement lorsque la largeur de l'écran est inférieure ou égale à 680 pixels */
+@media screen and (max-width: 680px) {
     nav .onglets {
-        margin-left: 0px;
-        margin-bottom: 20px;
+        margin-left: 0px; /* Marge gauche de 0 pixels */
+        margin-bottom: 20px; /* Marge inférieure de 20 pixels */
     }
     .main .card {
-        margin: 10px;
+        margin: 10px; /* Marge de 10 pixels pour les cartes principales */
     }
-    .main .content .card .right img{
-        height:200px;
-        width: 100%;
-        margin-top: -0px;
+    .main .content .card .right img {
+        height: 200px; /* Hauteur de l'image de droite de 200 pixels */
+        width: 100%; /* Largeur de l'image de droite à 100% */
+        margin-top: -0px; /* Marge supérieure de -0 pixel (pas de changement) */
     }
-    .main .content .card{
-        display: block;
+    .main .content .card {
+        display: block; /* Affichage en tant que bloc (changement pour afficher verticalement) */
     }
-    footer{
-        padding: 30px;
+    footer {
+        padding: 30px; /* Espacement intérieur de 30 pixels */
     }
 }
 
+/* Définition des styles pour l'élément avec l'ID 'searchInput' */
 #searchInput {
-    padding: 8px;
-    width: 200px;
+    padding: 8px; /* Espacement intérieur de 8 pixels */
+    width: 200px; /* Largeur de 200 pixels */
 }
-  
+
 
   
   
