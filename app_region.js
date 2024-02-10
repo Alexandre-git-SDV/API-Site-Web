@@ -42,8 +42,17 @@ async function region_display(number) {
    
     var result = "Aucun résultat correspondant.";
     const RegionList = [
-        { number: 1, name1: 'kanto' , name2: 'Kanto', name3: 'KANTO'},
+        { number: 1, name1: "Kanto", name2: "kanto", name3: "KANTO" },
+        { number: 2, name1: "Johto", name2: "johto", name3: "JOHTO" },
+        { number: 3, name1: "Hoenn", name2: "hoenn", name3: "HOENN" },
+        { number: 4, name1: "Sinnoh", name2: "sinnoh", name3: "SINNOH" },
+        { number: 5, name1: "Unys", name2: "unys", name3: "UNYS" },
+        { number: 6, name1: "Kalos", name2: "kalos", name3: "KALOS" },
+        { number: 7, name1: "Alola", name2: "alola", name3: "ALOLA" },
+        { number: 8, name1: "Galar", name2: "galar", name3: "GALAR" },
     ];
+    
+    
     // Parcours de chaque region dans RegionList
     for (let i = 0; i < RegionList.length; i++) {
       // Si le nom de la région est égal à la recherche (en majuscule première lettre et le reste en minuscule : name1 ; tout en minuscule : name2, tout en majuscule : name3)
