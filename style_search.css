@@ -28,8 +28,53 @@ body{
     text-overflow: ellipsis; /* Affiche des points de suspension (...) pour indiquer que du texte est masqué */
 }
 
+@media screen and (max-width:680px){
+    nav .onglets {
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .main .card {
+        margin: 10px;
+    }
+    .main .content .card .right img{
+        height:200px;
+        width: 100%;
+        margin-top: -0px;
+    }
+    .main .content .card{
+        display: block;
+    }
+    footer{
+        padding: 30px;
+    }
+}
 
+#searchInput {
+    padding: 8px;
+    width: 200px;
+}
+  
+#searchButton {
+    padding: 8px;
+    cursor: pointer;
+}
 
- 
+.search-class {
+    text-align: center;
+    margin-top: 20px; 
+    position: relative;
+  }
+  
+.search-results {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    display: none; 
+    max-width: 300px; 
+}
+  
 
   
