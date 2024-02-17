@@ -20,7 +20,7 @@ Vous trouverez sur ce site :
 
 - Une page avec la liste des 8 régions disponible, permettant alors si vous ne connaissez pas les 8 différentes régions, de pouvoir prendre connaissance de ces régions afin ensuite, de rechercher des informations sur chacune d'elles via la barre de recherche dans la page search_region.html ! -> fichiers : region.list.html, regionlist.js 
 
-                              ════════════════════════ Explication des branches ═══════════════════════
+                                ════════════════════════ Explication des branches ═══════════════════════
 
 Afin de mieux cerner l'avancement de notre projet, nous avons mis à disposition le GIT de notre projet, vous permettant alors de voir l'évolution de chaque fichiers et les différents changements que nous avons dû faire pour réaliser la meilleure expérience possible ! Pour cela, le tout a été divisée en 3 branches : "main_default" (la main branche), "main_mathis_default" (une branche principalement dédiée au js) et "main_alexandre_default" (une branche principalement dédiée à la partie css du projet) Vous pouvez retrouver ci-dessous une explication détaillée de chacune des branches : 
 
