@@ -1,8 +1,8 @@
-                               ═════════════════════════ **Introduction** ═════════════════════════
+                               ═════════════════════════ Introduction ═════════════════════════
 
 **Vous êtes actuellement sur la branche main_default du projet, vous êtes sur la bonne branche pour télécharger tout les fichiers mais si vous souhaitez regarder de plus près les changements apportés aux sites, n'hésitez pas à faire un tour sur les autres branches !** 
 
-                               ════════════════════════ **Explication du projet** ═════════════════
+                               ════════════════════════ Explication du projet ═════════════════
 
 Bienvenue sur le projet *Mewdex* ! 
 
@@ -20,7 +20,7 @@ Vous trouverez sur ce site :
 
 - Une page avec la liste des 8 régions disponible, permettant alors si vous ne connaissez pas les 8 différentes régions, de pouvoir prendre connaissance de ces régions afin ensuite, de rechercher des informations sur chacune d'elles via la barre de recherche dans la page search_region.html ! -> fichiers : region.list.html, regionlist.js 
 
-                              ════════════════════════ **Explication des branches** ═══════════════════════
+                              ════════════════════════ Explication des branches ═══════════════════════
 
 Afin de mieux cerner l'avancement de notre projet, nous avons mis à disposition le GIT de notre projet, vous permettant alors de voir l'évolution de chaque fichiers et les différents changements que nous avons dû faire pour réaliser la meilleure expérience possible ! Pour cela, le tout a été divisée en 3 branches : "main_default" (la main branche), "main_mathis_default" (une branche principalement dédiée au js) et "main_alexandre_default" (une branche principalement dédiée à la partie css du projet) Vous pouvez retrouver ci-dessous une explication détaillée de chacune des branches : 
 
@@ -36,7 +36,7 @@ Il s'agit d'une branche ne contenant que les fichiers qui ont été modifiés di
 
 Il s'agit d'une branche ne contenant que les fichiers qui ont été modifiés directement par Alexandre (responsable CSS) ainsi, il s'agira principalement de fichiers css comme style.css ou style_search.css, les fichiers ne doivent pas être directement téléchargés depuis cet endroit car il manque un nombre important de fichiers. Néanmoins, cette branche est utile pour observer et connaitres les différentes changements du site au niveau du côté style/esthétique/CSS du projet (notamment mise en forme de la barre de recherche, des informations affichées...). Il s'agit donc de la branche "css" du projet, elle est utile pour voir les avancements au niveau css du projet et comme dit précédemment, les fichiers ne doivent pas être téléchargés depuis cette branche ! 
 
-                                     ═════════════════════════ **Bilan** ═════════════════════════
+                                     ═════════════════════════ Bilan ═════════════════════════
 
 Pour terminer cette petite introduction à notre projet de site, nous aimerions d'abord vous remercier pour votre attention, en espérant que vous trouverez ce site intéressant et de qualité ! Vous pouvez nous poser des questions via notre forum communautaire : <a href>https://blogs.mtdv.me/blog/posts/pokemon_API</a> 
 
