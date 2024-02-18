@@ -4,29 +4,79 @@
 html{
     scroll-behavior: smooth;
 }
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+       
+
+/* Définition des styles pour l'élément <html> */
+html {
+    scroll-behavior: smooth; /* Comportement de défilement fluide */
+}
+
+/* Définition des styles pour l'élément <body> */
+body {
+
+    font-family: 'Montserrat', sans-serif; 
+    margin: 50px;/* Marge extérieure nul */
+    padding: 50px;/* Espacement intérieur nul */
+    font-family: 'Montserrat', sans-serif;/* Utilisation de la police Montserrat ou une police sans-serif par défaut */
+    align-items: center;
     min-height: 100vh;
     background-image: linear-gradient(180deg, #3f3f3f 0%, #b43daa  50%, #ff7ceb 100%);
+    justify-content: center;
+    
+    
 }
 
-/* Style pour l'élément contenant les noms de Pokémon */
-.pokemonList{
-    width: 30ch; /* Largeur fixe de 30 caractères (chaque caractère est équivalent à la largeur d'un '0') */
+/* Définition des styles pour l'élément <nav> */
+nav {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Les objets sont centrés horizontalement */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    border-bottom: 5px solid #b43daa; /* Bordure inférieure de 5 pixels solide avec la couleur #b43daa */
 }
 
-/* Style pour chaque nom de Pokémon */
-.pokemon-name {
-    display: block; /* Affichage en tant que bloc pour que chaque nom occupe une ligne */
-    white-space: wrap; /* Empêche le texte de se retourner à la ligne */
-    overflow: hidden; /* Masque tout texte dépassant de la largeur définie */
-    text-overflow: ellipsis; /* Affiche des points de suspension (...) pour indiquer que du texte est masqué */
+nav {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Les objets sont centrés horizontalement */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    border-bottom: 5px solid #b43daa; /* Bordure inférieure de 5 pixels solide avec la couleur #b43daa */
 }
+
+/* Définition des styles pour les titres h1 à l'intérieur de l'élément <nav> */
+nav h1 {
+    color: #b43daa; /* Couleur du texte rose */
+    font-family: 'Pokemon Solid', sans-serif; /* Utilisation de la police Playfair Display ou une police serif par défaut */
+    font-size: 25px; /* Taille de police de 30 pixels */
+}
+
+/* Définition des styles pour les éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
+nav .onglets {
+    margin-top: 3px; /* Marge supérieure de 3 pixels */
+    margin-left: 150px; /* Marge gauche de 300 pixels */
+}
+
+/* Définition des styles pour les liens <a> à l'intérieur des éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
+nav .onglets a {
+    text-decoration: none; /* Pas de décoration de texte (soulignement par défaut) */
+    color: #000; /* Couleur du texte noir */
+    margin-right: 10px; /* Marge droite de 10 pixels */
+    border-bottom: 1px solid #000; /* Bordure inférieure de 1 pixel solide avec la couleur noire */
+    padding-bottom: 5px; /* Espacement intérieur inférieur de 5 pixels */
+}
+
+
+/* Définition des styles pour l'élément <header> */
+header {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-direction: column; /* Les objets seront disposés en colonne */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    background: #000; /* Couleur de fond noire */
+    background-size: cover; /* La taille de l'image de fond est ajustée pour couvrir tout l'élément */
+    color: #fff; /* Couleur du texte blanc */
+    padding: 40px; /* Espacement intérieur de 40 pixels */
+}
+
 
 @media screen and (max-width:680px){
     nav .onglets {
@@ -49,6 +99,80 @@ body{
     }
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 300px;
+    gap: 10px;
+}
+
+
+/* Style pour l'élément contenant les noms de Pokémon */
+.pokemonList {
+    display: grid;
+    align-items: center;
+    margin-top: 20px;
+    grid-column: 2 / 4; /* début et fin (exclue) */
+    grid-row: 1;
+    background-color: slategray;
+}
+
+/* Style pour chaque nom de Pokémon */
+.basicinfo {
+    display: grid;
+    margin-left: 10px;
+    font-weight: bold;
+    grid-column: 2 / 4; /* début et fin (exclue) */
+    grid-row: 1;
+    background-color: slategray;
+}
+
+/* Style pour l'image de Pokémon */
+.sprite { /* fait moi un bloc pour mettre l'image en haut à gauche de ma  */
+    display: grid;
+    height: 960px; /* Ajustez la hauteur selon vos besoins */
+    width: auto; /* La largeur s'ajustera automatiquement pour conserver les proportions */
+    float: left;
+    margin-right: 10px;
+    grid-column: 2 / 4; /* début et fin (exclue) */
+    grid-row: 1;
+    background-color: slategray;
+}
+
+/* Style pour les stats */
+.stats-container {
+    display: grid;
+    margin-right: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: l;
+    align-items: flex-end;
+    grid-column: 2 / 4; /* début et fin (exclue) */
+    grid-row: 1;
+    background-color: slategray;
+
+}
+
+
+
+/* Style pour le conteneur des attaques de Pokémon */
+.attack-container {
+    /* fait moi un bloc pour en bas à droite de ma page pour mettre une longue liste d'attacks */
+    display: grid;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff; /* Couleur de fond blanche */
+    border: 1px solid #ccc; /* Bordure de 1 pixel solide avec la couleur #ccc */
+    padding: 10px; /* Espacement intérieur de 10 pixels */
+    display: none; /* Masque l'élément par défaut */
+    max-width: 300px; /* Largeur maximale de 300 pixels */
+}
+
+
+
+
+/* Styles pour la barre de recherche */
 #searchInput {
     padding: 8px;
     width: 200px;
@@ -63,7 +187,7 @@ body{
     text-align: center;
     margin-top: 20px; 
     position: relative;
-  }
+}
   
 .search-results {
     position: absolute;
@@ -75,6 +199,7 @@ body{
     display: none; 
     max-width: 300px; 
 }
+
   
 
   
