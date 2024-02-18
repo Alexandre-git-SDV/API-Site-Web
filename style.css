@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+                
 
 /* Définition des styles pour l'élément <html> */
 html {
@@ -31,14 +34,14 @@ nav {
 /* Définition des styles pour les titres h1 à l'intérieur de l'élément <nav> */
 nav h1 {
     color: #b43daa; /* Couleur du texte rose */
-    font-family: 'Playfair Display', serif; /* Utilisation de la police Playfair Display ou une police serif par défaut */
-    font-size: 30px; /* Taille de police de 30 pixels */
+    font-family: 'Pokemon Solid', sans-serif; /* Utilisation de la police Playfair Display ou une police serif par défaut */
+    font-size: 25px; /* Taille de police de 30 pixels */
 }
 
 /* Définition des styles pour les éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
 nav .onglets {
     margin-top: 3px; /* Marge supérieure de 3 pixels */
-    margin-left: 300px; /* Marge gauche de 300 pixels */
+    margin-left: 150px; /* Marge gauche de 300 pixels */
 }
 
 /* Définition des styles pour les liens <a> à l'intérieur des éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
@@ -63,7 +66,7 @@ header {
 
 /* Définition des styles pour les titres h1 à l'intérieur de l'élément <header> */
 header h1 {
-    font-family: 'Playfair Display', serif; /* Police de caractères 'Playfair Display' ou une police de caractères de type serif */
+    font-family: 'Pokemon Solid', sans-serif; /* Police de caractères 'Playfair Display' ou une police de caractères de type serif */
     font-size: 50px; /* Taille de police de 50 pixels */
 }
 
