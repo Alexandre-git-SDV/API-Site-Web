@@ -34,7 +34,8 @@ Il s'agit d'une branche ne contenant que les fichiers qui ont été modifiés di
 
 ═════════ *La branche main_alexandre_default* ═════════
 
-Il s'agit d'une branche ne contenant que les fichiers qui ont été modifiés directement par Alexandre (responsable CSS) ainsi, il s'agira principalement de fichiers css comme style.css ou style_search.css, les fichiers ne doivent pas être directement téléchargés depuis cet endroit car il manque un nombre important de fichiers. Néanmoins, cette branche est utile pour observer et connaitres les différentes changements du site au niveau du côté style/esthétique/CSS du projet (notamment mise en forme de la barre de recherche, des informations affichées...). Il s'agit donc de la branche "css" du projet, elle est utile pour voir les avancements au niveau css du projet et comme dit précédemment, les fichiers ne doivent pas être téléchargés depuis cette branche ! 
+Il s'agit d'une branche ne contenant que les fichiers qui ont été modifiés directement par Alexandre (responsable HTML et CSS) ainsi, il s'agira principalement de fichiers html et css comme par exemple style.css ou style_search.css et pour le HTML site1.html et search.html , les fichiers ne doivent pas être directement téléchargés depuis cet endroit car il manque un nombre important de fichiers
+(notamment les fichiers JS ). Néanmoins, cette branche est utile pour observer et connaitres les différentes changements du site au niveau du côté style/esthétique/CSS du projet (notamment mise en forme de la barre de recherche, des informations affichées...). Il s'agit donc de la branche "css" du projet, elle est utile pour voir les avancements au niveau css du projet et comme dit précédemment, les fichiers ne doivent pas être téléchargés depuis cette branche ! 
 
                                 ═════════════════════════ Bilan ═════════════════════════
 
