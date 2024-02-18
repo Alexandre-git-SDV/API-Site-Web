@@ -149,7 +149,7 @@ header {
     align-items: flex-end;
     grid-column: 2 / 4; /* début et fin (exclue) */
     grid-row: 1;
-    background-color: rgb(0, 128, 255);
+    background-color: rgb(175, 0, 172);
 
 }
 
