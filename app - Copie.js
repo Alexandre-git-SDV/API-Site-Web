@@ -10,30 +10,43 @@ async function request_async_pokemon(number) { // fonction asynchrone pour aller
   }
 }
 
+/* async function request_async_region() { // fonction asynchrone pour aller chercher les données du pokemon pikachu
+  try { 
+    const response = await fetch('https://pokeapi.co/api/v2/region/'); // on attend la réponse du lien vers les régions
+    const data = await response.json(); // on attend la conversion de la réponse en json
+    return data; // on retourne les données
+  } catch (error) {
+    console.error('Erreur lors de la récupération des données de Region :', error); // on affiche l'erreur si il y en a une
+  }
+} */
+
 async function pokemon_display(number) {
   const pokemon_info = document.getElementById('pokemon-info'); // on récupère l'élément html où on va afficher les données
   // const region_info = document.getElementById('region-info'); // on récupère l'élément html où on va afficher les données
   // const region_data = await request_async_region(); // on attend les données de la région
   const pokemon_data = await request_async_pokemon(number); // on attend les données du pokemon
+  const moves = pokemon_data.moves.map(move => move.move.name); // on récupère les noms des mouvements du pokemon
   const types = pokemon_data.types.map(type => type.type.name); // on récupère les types du pokemon
   const stat_name = pokemon_data.stats.map(stat => stat.stat.name); // on récupère les noms des stats du pokemon
   const stat = pokemon_data.stats.map(stat => stat.base_stat); // on récupère les stats du pokemon
 
-  const sprite = `<div class="sprite-container"><img src="${pokemon_data.sprites.front_default}" class="pokemon-sprite"></div>`;
-  const basicInfo = `<div class="basicinfo"> Nom : ${pokemon_data.name}</div><br>
-                     <div class="basicinfo"> Taille : ${pokemon_data.height} dm</div><br>
-                     <div class="basicinfo"> Poids : ${pokemon_data.weight} hg</div><br>
-                     <div class="basicinfo"> Types : ${types.join(', ')}</div>`;
+  const sprite = `<p1><img src="${pokemon_data.sprites.front_default}"></p1><br>`;
+  const basicInfo = `<p2>Nom : ${pokemon_data.name}</p2><br>
+                    <p3>Taille : ${pokemon_data.height} dm</p3><br>
+                    <p4>Poids : ${pokemon_data.weight} hg</p4><br>
+                    <p5>Types : ${types.join(', ')}</p5>`;
   
+  const sortmoves = moves.sort();
+  const attacks = `<p6>Attaques : ${sortmoves.join(', ')}</p6>`;
 
-  let statsInfo = '<div class="stats-container">Statistiques :</div><br>'; 
+  let statsInfo = '<p7>Statistiques :</p7><br>'; 
 
   // Boucle pour afficher le nom de la stat puis la valeur de la stat
   for (let i = 0; i < stat.length; i++) {
-    statsInfo += `<div class="stats-container">${stat_name[i]} :  ${stat[i]}</div><br>`;
+    statsInfo += `<p8>${stat_name[i]} :  ${stat[i]}</p8><br>`;
   }
 
-  const info = `${sprite}${basicInfo}<br><br>${statsInfo}`; 
+  const info = `${sprite}${basicInfo}<br><br>${attacks}<br><br>${statsInfo}`; 
   pokemon_info.innerHTML = info; // on affiche les données dans l'élément html
 }
 
@@ -50,12 +63,9 @@ function performSearch() {
 
 async function simulateSearch(searchTerm) {
   var final_result = document.getElementById('searchResults');
-  const pokemon_info = document.getElementById('pokemon-info');
-  pokemon_info.innerHTML = "";
 
  
   var result = "Aucun résultat correspondant.";
-  
   const PokemonList = [
     { number: 1, name1: 'bulbizarre' , name2: 'Bulbizarre', name3: 'BULBIZARRE'},
     { number: 2, name1: 'Herbizarre', name2: 'herbizarre', name3: 'HERBIZARRE'},
@@ -224,40 +234,10 @@ async function simulateSearch(searchTerm) {
       }
     }
   }
-  // Petit bonus trop lol  :D 
-  if ((searchTerm.toLowerCase() === "Carapute" || searchTerm.toLowerCase() === "carapute" || searchTerm.toLowerCase() === "CARAPUTE")){
-    const pokemon_info = document.getElementById('pokemon-info');
-    pokemon_info.innerHTML = `<img id="youtubeImage2" src="what.jpg" alt="NEVER GONNA GIVE YOU UP">`;
-
-    // Sélectionner l'image spécifique par son ID
-    const youtubeImage2 = document.getElementById('youtubeImage2');
-
-    // Ajouter un gestionnaire d'événements clic à cette image spécifique
-    youtubeImage2.addEventListener('click', () => {
-        // Rediriger l'utilisateur vers le lien YouTube
-        window.location.href = 'https://www.youtube.com/watch?v=EltoaN4U4Oc';
-    });
-  }
-  if ((searchTerm.toLowerCase() === "Rickrolled" || searchTerm.toLowerCase() === "rickrolled" || searchTerm.toLowerCase() === "RICKROLLED")) {
-    const pokemon_info = document.getElementById('pokemon-info');
-    pokemon_info.innerHTML = `<img id="youtubeImage" src="lol.jpg" alt="NEVER GONNA GIVE YOU UP">`;
-
-    // Sélectionner l'image spécifique par son ID
-    const youtubeImage = document.getElementById('youtubeImage');
-
-    // Ajouter un gestionnaire d'événements clic à cette image spécifique
-    youtubeImage.addEventListener('click', () => {
-        // Rediriger l'utilisateur vers le lien YouTube
-        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
-    });
-}
-
-// Affichage du résultat dans l'élément approprié (avec innerHTML)
-final_result.innerHTML = result;
-
+  // Affichage du résultat dans l'élément approprié (avec innerHTML)
+  final_result.innerHTML = result;
 
 
 }
-
 
 
