@@ -14,12 +14,12 @@ async function region_display(number) {
     const locations = region_data.locations.map(location => location.name);// on récupère les noms des lieux de la région
     const version_groups = region_data.version_groups.map(VersionGroup => VersionGroup.name); // on récupère les noms des différentes jeux dns lesquels on peut visiter la région
     
-    const basicInfo = `<p1>Nom : ${region_data.name}</p1><br>
-                       <p2>Génération d'apparition : ${region_data.main_generation.name}</p2><br>`; // On affiche le nom de la région et la génération d'apparition
+    const basicInfo = `<div class="basicinfo">Nom : ${region_data.name}</div><br>
+                       <div class="basicinfo">Génération d'apparition : ${region_data.main_generation.name}</div><br>`; // On affiche le nom de la région et la génération d'apparition
     
     const sortlocations = locations.sort(); // On tri les lieux par ordre alphabétique
-    const location = `<p3>Liste d'endroits marquants : <br> ${sortlocations.join(', ')}</p3>`; // on affiche les lieux dans l'élément html
-    const version = `<p4>Liste des jeux dans lesquels il est possible de visiter cette région : ${version_groups.join(', ')}</p3>`; // on affiche les jeux dans l'élément html
+    const location = `<div class="location-container">Liste d'endroits marquants : <br> ${sortlocations.join(', ')}</div>`; // on affiche les lieux dans l'élément html
+    const version = `<div class="version-container">Liste des jeux dans lesquels il est possible de visiter cette région : ${version_groups.join(', ')}</div>`; // on affiche les jeux dans l'élément html
   
     const info = `${basicInfo}<br><br>${location}<br><br>${version}`; // on regroupe les données dans une seule variable 
     region_info.innerHTML = info; // on affiche les données dans l'élément html
