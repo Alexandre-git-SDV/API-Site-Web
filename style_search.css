@@ -110,7 +110,7 @@ header {
 /* Style pour l'élément contenant les noms de Pokémon */
 .pokemonList {
     display: grid;
-    align-items: center;
+    align-items: left;
     margin-top: 20px;
     grid-column: 2 / 4; /* début et fin (exclue) */
     grid-row: 1;
@@ -122,7 +122,7 @@ header {
     display: grid;
     margin-left: 10px;
     font-weight: bold;
-    grid-column: 2 / 4; /* début et fin (exclue) */
+    grid-column: 3; /* position 3 */
     grid-row: 1;
     background-color: slategray;
 }
@@ -133,8 +133,8 @@ header {
     height: 960px; /* Ajustez la hauteur selon vos besoins */
     width: auto; /* La largeur s'ajustera automatiquement pour conserver les proportions */
     float: left;
-    margin-right: 10px;
-    grid-column: 2 / 4; /* début et fin (exclue) */
+    margin-left: 10px;
+    grid-column: 4; /* position 4 fin */
     grid-row: 1;
     background-color: slategray;
 }
@@ -159,7 +159,6 @@ header {
 .attack-container {
     /* fait moi un bloc pour en bas à droite de ma page pour mettre une longue liste d'attacks */
     display: grid;
-    position: absolute;
     bottom: 0;
     right: 0;
     background-color: #fff; /* Couleur de fond blanche */
