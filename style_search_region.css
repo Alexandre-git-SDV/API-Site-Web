@@ -106,63 +106,39 @@ header {
     gap: 10px;
 }
 
-
-/* Style pour l'élément contenant les noms de Pokémon */
-.pokemonList {
-    display: grid;
-    align-items: left;
-    margin-top: 20px;
-    grid-column: 2 / 4; /* début et fin (exclue) */
-    grid-row: 1;
-    background-color: slategray;
-}
-
 /* Style pour chaque nom de Pokémon */
 .basicinfo {
     display: grid;
     margin-left: 10px;
     font-weight: bold;
-    grid-column: 3; /* position 3 */
-    grid-row: 1;
-    background-color: rgb(137, 167, 197);
+    background-color: slategray;
+    border-radius: 1%;
 }
 
-/* Style pour l'image de Pokémon */
-.sprite { /* fait moi un bloc pour mettre l'image en haut à gauche de ma  */
-    display: grid;
-    height: 960px; /* Ajustez la hauteur selon vos besoins */
-    width: auto; /* La largeur s'ajustera automatiquement pour conserver les proportions */
-    float: left;
-    margin-left: 10px;
-    grid-column: 4; /* position 4 fin */
-    grid-row: 1;
-    background-color: slategray;
-}
+
 
 /* Style pour les stats */
-.stats-container {
+.location-container {
     display: grid;
     margin-right: 10px;
     font-weight: bold;
     display: flex;
     flex-direction: l;
     align-items: flex-end;
-    grid-column: 2 / 4; /* début et fin (exclue) */
-    grid-row: 1;
-    background-color: rgb(190, 30, 187);
+    background-color: rgb(175, 0, 172);
+    border-radius: 1%;
 
 }
 
 
 
 /* Style pour le conteneur des attaques de Pokémon */
-.attack-container {
+.version-container {
     /* fait moi un bloc pour en bas à droite de ma page pour mettre une longue liste d'attacks */
     display: grid;
-    bottom: 0;
-    right: 0;
     background-color: #fff; /* Couleur de fond blanche */
-    border: 1px solid #ccc; /* Bordure de 1 pixel solide avec la couleur #ccc */
+    border: 10px solid #ccc; /* Bordure de 1 pixel solide avec la couleur #ccc */
+    border-radius: 1%;
     padding: 10px; /* Espacement intérieur de 10 pixels */
     display: none; /* Masque l'élément par défaut */
     max-width: 300px; /* Largeur maximale de 300 pixels */
