@@ -1,6 +1,9 @@
 function getPokemonList(){
+    /* Entrée : aucune
+       Sortie : affichage de la liste des pokemons dans l'élément html pokemon-list
+       Fonction : Fonction qui permet d'afficher la liste des pokemons dans l'élément html pokemon-list */
     const PokemonList = [
-        { number: 1, name: 'Bulbizarre', type: ['Plante', 'Poison'] },
+        { number: 1, name: 'Bulbizarre', type: ['Plante', 'Poison'] }, // number : numéro du pokemon, name : nom du pokemon, type : type du pokemon
         { number: 2, name: 'Herbizarre', type: ['Plante', 'Poison'] },
         { number: 3, name: 'Florizarre', type: ['Plante', 'Poison'] },
         { number: 4, name: 'Salamèche', type: ['Feu'] },
@@ -152,10 +155,32 @@ function getPokemonList(){
         { number: 150, name: 'Mewtwo', type: ['Psy'] },
         { number: 151, name: 'Mew', type: ['Psy'] },
 ];
-    for (let i = 0; i < PokemonList.length; i++) {
-        document.write(`<li>${PokemonList[i].number} : ${PokemonList[i].name} - ${PokemonList[i].type.join(', ')}</li>`);
-    }
-    document.write('</ul>');
+    const pokemonListDiv = document.getElementById('pokemonList');
+    const ul = document.createElement('ul');
+
+    PokemonList.forEach(pokemon => {
+        const li = document.createElement('li');
+        li.textContent = `${pokemon.number}: ${pokemon.name} - ${pokemon.type.join(', ')}`;
+        ul.appendChild(li);
+    });
+
+    pokemonListDiv.appendChild(ul);
 }
+
 getPokemonList();
+
+const pokemonListDiv = document.getElementById('pokemonList');
+const img = document.createElement('img');
+img.src = 'welcome.jpg';
+img.alt = 'WELCOME TO TWIN PEAKS';
+img.style.width = '200px';
+img.style.height = 'auto';
+pokemonListDiv.insertAdjacentElement('afterend', img);
+
+img.addEventListener('click', function() {
+    window.location.href = 'https://docs.google.com/document/d/1tyGliCe7tMOj2Ssx03d7LmCjko5Fv42EA-_jwttCQI8/edit?usp=sharing';
+});
+``
+
+
     

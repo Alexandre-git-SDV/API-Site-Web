@@ -22,8 +22,8 @@ async function region_display(number) {
     const locations = region_data.locations.map(location => location.name);// on récupère les noms des lieux de la région
     const version_groups = region_data.version_groups.map(VersionGroup => VersionGroup.name); // on récupère les noms des différentes jeux dans lesquels on peut visiter la région
     
-    const basicInfo = `<br><div class="basicinfo">Nom : ${region_data.name}</div><br>
-                       <div class="basicinfo">Génération d'apparition : ${region_data.main_generation.name}</div><br>`; // On affiche le nom de la région et la génération d'apparition
+    const basicInfo = `<br><div class="basicinfo">Nom : ${region_data.name}</div>
+                       <div class="basicinfo">Génération d'apparition : ${region_data.main_generation.name}</div>`; // On affiche le nom de la région et la génération d'apparition
     
     const sortlocations = locations.sort(); // On tri les lieux par ordre alphabétique
     const location = `<div class="location-container">Liste d'endroits marquants : <br> ${sortlocations.join(', ')}</div>`; // on affiche les lieux dans l'élément html
@@ -85,14 +85,40 @@ async function region_display(number) {
           await region_display(RegionList[i].number); 
           result = "Affichage des informations de "+ RegionList[i].name1 + " réussi."; // Message de succès pour prévenir l'utilisateur
           final_result.style.display = "block"; // On affiche le résultat (en block pour que le message soit bien visible)
-        } catch (error) {
-          console.error('Erreur lors de l\'affichage des informations de : '+ RegionList[i].name1 + error);
-          result = "Erreur lors de l'affichage des informations.";
+        } catch (error) { // Si il y a une erreur
+          console.error('Erreur lors de l\'affichage des informations de : '+ RegionList[i].name1 + error); // On prévient l'utilisateur en affichant l'erreur dans la console
+          result = "Erreur lors de l'affichage des informations."; // On change le résultat pour bien différencier un message prévenant l'utilisateur d'une erreur à un message le prévenant d'une absence de résultat
         }
       }
     }
-    // Affichage du résultat dans l'élément approprié (avec innerHTML)
+    if ((searchTerm.toLowerCase() === "Woodsman" || searchTerm.toLowerCase() === "woodsman" || searchTerm.toLowerCase() === "WOODSMAN")) { // Même message de test que précédemment mais pour autre chose 
+      const pokemon_info = document.getElementById('region-info'); // Récupérer l'élément où on va afficher les informations du pokemon
+      pokemon_info.innerHTML = `<img id="youtubeImage" src="woods.jpg" alt="WOODSMAN">`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
+  
+      // Sélectionner l'image spécifique par son ID (ici youtubeImage3)
+      const youtubeImage = document.getElementById('youtubeImage');
+  
+      // Ajouter un gestionnaire d'événements clic à cette image spécifique
+      youtubeImage.addEventListener('click', () => { // Si on clique sur l'image
+          // Rediriger l'utilisateur vers le lien YouTube
+          window.location.href = 'https://docs.google.com/document/d/1ZZvMIHczxUnVhI_yS7DdDKRiWVDKdXd1JarZVfiO2IA/edit?usp=sharing';
+      });
+  }
+    // Affichage du résultat dans l'élément approprié (avec innerHTML, valable pour les 8 régions )
     final_result.innerHTML = result;
   
   
   }
+
+// Si tu es arrivé jusqu'ici (encore une fois) , bravo ! En petit bonus voici un (autre) poème pour toi : 
+
+/* 
+Through the darkness of future past,
+The magician longs to see.
+One chants out between two worlds,
+Fire walk with me.
+*/ 
+
+// Si tu as la référence, alors bravooooo :D Tu as doublement les cramptés dans ce cas là :D 
+
+// Si tu ne l'as toujours pas alors je te laisse chercher sur internet, il n'y a pas que Pokemon dans la vie tu sais :D 

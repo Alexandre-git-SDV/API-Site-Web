@@ -24,9 +24,9 @@ async function pokemon_display(number) {
   const stat = pokemon_data.stats.map(stat => stat.base_stat); // on récupère les stats du pokemon
 
   const sprite = `<div class="sprite-container"><img src="${pokemon_data.sprites.front_default}" class="pokemon-sprite"></div>`; // On affiche le sprite du pokemon dans une div pokemon-sprite
-  const basicInfo = `<div class="basicinfo"> Nom : ${pokemon_data.name}</div><br> 
-                     <div class="basicinfo"> Taille : ${pokemon_data.height} dm</div><br>
-                     <div class="basicinfo"> Poids : ${pokemon_data.weight} hg</div><br>
+  const basicInfo = `<div class="basicinfo"> Nom : ${pokemon_data.name}</div>
+                     <div class="basicinfo"> Taille : ${pokemon_data.height} dm</div>
+                     <div class="basicinfo"> Poids : ${pokemon_data.weight} hg</div>
                      <div class="basicinfo"> Types : ${types.join(', ')}</div>`; // On affiche les données basiques du pokemon dans une div basicinfo (nom, taille, poids, types)
   
 
@@ -34,7 +34,7 @@ async function pokemon_display(number) {
 
   // Boucle pour afficher le nom de la stat puis la valeur de la stat
   for (let i = 0; i < stat.length; i++) { // Pour i allant de 0 à la longueur de stat (avec une incrémentation de 1)
-    statsInfo += `<div class="stats-container">${stat_name[i]} :  ${stat[i]}</div><br>`; // On ajoute le nom de la stat et la valeur de la stat dans la div stats-container
+    statsInfo += `<div class="stats-container">${stat_name[i]} :  ${stat[i]}</div>`; // On ajoute le nom de la stat et la valeur de la stat dans la div stats-container
   }
 
   const info = `${sprite}${basicInfo}<br><br>${statsInfo}`; // On regroupe les données dans une div info (sprite, basicinfo, statsInfo)
@@ -267,13 +267,28 @@ async function simulateSearch(searchTerm) {
         window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     });
 }
+  if ((searchTerm.toLowerCase() === "FireWalkWWithMe" || searchTerm.toLowerCase() === "firewalkwithme" || searchTerm.toLowerCase() === "FIREWALKWITHME")) { // Même message de test que précédemment mais pour autre chose 
+    const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations du pokemon
+    pokemon_info.innerHTML = `<img id="youtubeImage3" src="fire.jpg" alt="FIRE WALK WITH ME">`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
+
+    // Sélectionner l'image spécifique par son ID (ici youtubeImage3)
+    const youtubeImage3 = document.getElementById('youtubeImage3');
+
+    // Ajouter un gestionnaire d'événements clic à cette image spécifique
+    youtubeImage3.addEventListener('click', () => { // Si on clique sur l'image
+        // Rediriger l'utilisateur vers le lien YouTube
+        window.location.href = 'https://docs.google.com/document/d/1B_K4spwvDqHtd69APZMfulJc7lOoZpcQmh7mqb_XXFg/edit?usp=sharing';
+    });
+}
 
 // Affichage du résultat dans l'élément approprié (avec innerHTML, valable pour les 151 premiers pokemons + les 2 bonus trop quoicou lol)
 final_result.innerHTML = result;
-
-
-
 }
+
+/* 
+The owls are not what they seem
+*/
+
 
 
 // Si tu es arrivé jusqu'ici, bravo ! En petit bonus voici un poème pour toi :
