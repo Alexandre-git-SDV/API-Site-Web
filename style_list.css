@@ -26,11 +26,11 @@ body {
     
 }
 
-#trigger {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 20px;
+#trigger { /* On définit les styles pour l'élément ayant l'identifiant "trigger" */
+    position: fixed; /* Positionnement fixe */
+    bottom: 0; /* Positionné en bas */
+    right: 0; /* Positionné à droite */
+    margin: 20px; /* Marge de 20px */
 }
 
 

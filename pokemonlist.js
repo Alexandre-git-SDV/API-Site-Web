@@ -1,4 +1,7 @@
 function getPokemonList(){
+    /* Entrée : aucune
+       Sortie : une liste de tous les pokémons de la première génération (de 1 à 151) 
+       Fonction : affiche la liste des pokémons de la première génération avec leur numéro, leur nom et leur type */
     const PokemonList = [
         { number: 1, name: 'Bulbizarre', type: ['Plante', 'Poison'] },
         { number: 2, name: 'Herbizarre', type: ['Plante', 'Poison'] },
@@ -154,19 +157,22 @@ function getPokemonList(){
         { number: 151, name: 'Mewtwo', type: ['Psy'] },
         { number: 152, name: 'Mew', type: ['Psy'] },
 ];
-    for (let i = 0; i < PokemonList.length; i++) {
-        document.write(`<li>${PokemonList[i].number} : ${PokemonList[i].name} - ${PokemonList[i].type.join(', ')}</li>`);
+    for (let i = 0; i < PokemonList.length; i++) { // Pour i allant de 0 à la longueur de la liste des pokémons
+        document.write(`<li>${PokemonList[i].number} : ${PokemonList[i].name} - ${PokemonList[i].type.join(', ')}</li>`); // Afficher le numéro, le nom et le type du pokémon
     }
-    document.write('</ul>');
+    document.write('</ul>'); // Fermer la liste
 }
-getPokemonList();
+getPokemonList(); // Appeler la fonction pour afficher la liste des pokémons de la première génération
 
-document.addEventListener("DOMContentLoaded", function() {
-    const trigger = document.getElementById('trigger');
-    const hidden = document.getElementById('hidden');
+document.addEventListener("DOMContentLoaded", function() { // Attendre que le DOM soit chargé
+    /* Entrée : aucune
+       Sortie : aucune
+       Fonction : affiche le lien caché après avoir cliqué sur le mot "secret" (petit bonus trop lol) */
+    const trigger = document.getElementById('trigger'); // Récupérer l'élément avec l'id "trigger"
+    const hidden = document.getElementById('hidden'); // Récupérer l'élément avec l'id "hidden"
 
-    trigger.addEventListener('click', function() {
-        hidden.style.display = 'block';
+    trigger.addEventListener('click', function() { // Ajouter un écouteur d'événement pour le clic
+        hidden.style.display = 'block'; // Afficher le lien caché
         trigger.style.display = 'none'; // Cacher le mot "secret" après avoir cliqué pour afficher le lien
     });
 

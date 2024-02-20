@@ -267,9 +267,9 @@ async function simulateSearch(searchTerm) {
         window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     });
 }
-  if ((searchTerm.toLowerCase() === "FireWalkWWithMe" || searchTerm.toLowerCase() === "firewalkwithme" || searchTerm.toLowerCase() === "FIREWALKWITHME")) { // Même message de test que précédemment mais pour autre chose 
-    const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations du pokemon
-    pokemon_info.innerHTML = `<a href=https://docs.google.com/document/d/1B_K4spwvDqHtd69APZMfulJc7lOoZpcQmh7mqb_XXFg/edit?usp=sharing> Clique ici pour voir le contenu secret </a>`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
+  if ((searchTerm.toLowerCase() === "FireWalkWWithMe" || searchTerm.toLowerCase() === "firewalkwithme" || searchTerm.toLowerCase() === "FIREWALKWITHME")) { // Même test mais cette fois ci pour un mot secret (qui n'est pas un pokemon)
+    const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations voulu (ici pokemon-info)
+    pokemon_info.innerHTML = `<a href=https://docs.google.com/document/d/1B_K4spwvDqHtd69APZMfulJc7lOoZpcQmh7mqb_XXFg/edit?usp=sharing> Clique ici pour voir le contenu secret </a>`; // Afficher un lien spécifique dans l'élément pokemon-info (petite surprise)
 
 
 
@@ -279,5 +279,6 @@ async function simulateSearch(searchTerm) {
 final_result.innerHTML = result;
 }
 
+// Si tu es arrivé jusqu'ici, bravooooo !!!! :D Sache que plusieurs easter eggs sont disponibles sur le site notamment sur une série connu des années 90, je te conseille d'aller faire un tour du côté des listes pour les trouver ;)
 
 

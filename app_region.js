@@ -91,9 +91,9 @@ async function region_display(number) {
         }
       }
     }
-    if ((searchTerm.toLowerCase() === "Woodsman" || searchTerm.toLowerCase() === "woodsman" || searchTerm.toLowerCase() === "WOODSMAN")) { // Même message de test que précédemment mais pour autre chose 
-      const pokemon_info = document.getElementById('region-info'); // Récupérer l'élément où on va afficher les informations du pokemon
-      pokemon_info.innerHTML = `<a href="https://docs.google.com/document/d/1ZZvMIHczxUnVhI_yS7DdDKRiWVDKdXd1JarZVfiO2IA/edit?usp=sharing">Clique ici pour voir le contenu secret</a>`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
+    if ((searchTerm.toLowerCase() === "Woodsman" || searchTerm.toLowerCase() === "woodsman" || searchTerm.toLowerCase() === "WOODSMAN")) { // Même test mais cette fois ci pour un mot secret (qui n'est pas une région de Pokémon)
+      const pokemon_info = document.getElementById('region-info'); // // Récupérer l'élément où on va afficher les informations voulu (ici region-info)
+      pokemon_info.innerHTML = `<a href="https://docs.google.com/document/d/1ZZvMIHczxUnVhI_yS7DdDKRiWVDKdXd1JarZVfiO2IA/edit?usp=sharing">Clique ici pour voir le contenu secret</a>`; // Afficher un lien spécifique dans l'élément pokemon-info (petite surprise)
   
   
 
@@ -104,3 +104,4 @@ async function region_display(number) {
   
   }
 
+// Si tu es arrivé jusqu'ici, bravooooo !!!! :D Sache que plusieurs easter eggs sont disponibles sur le site notamment sur une série connu des années 90, je te conseille d'aller faire un tour du côté des listes pour les trouver ;)
