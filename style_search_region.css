@@ -1,6 +1,10 @@
+/*Importation des polices */
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 html{
     scroll-behavior: smooth;
 }
@@ -78,6 +82,8 @@ header {
 }
 
 
+
+
 @media screen and (max-width:680px){
     nav .onglets {
         margin-left: 0px;
@@ -109,9 +115,9 @@ header {
 /* Style pour chaque nom de Pokémon */
 .basicinfo {
     display: grid;
-    margin-left: 10px;
+    margin-right: 10px;
     font-weight: bold;
-    background-color: slategray;
+    background-color: rgb(137, 167, 197);
     border-radius: 1%;
 }
 
@@ -126,7 +132,7 @@ header {
     flex-direction: l;
     align-items: flex-end;
     background-color: rgb(175, 0, 172);
-    border-radius: 1%;
+
 
 }
 
@@ -134,14 +140,14 @@ header {
 
 /* Style pour le conteneur des attaques de Pokémon */
 .version-container {
-    /* fait moi un bloc pour en bas à droite de ma page pour mettre une longue liste d'attacks */
     display: grid;
-    background-color: #fff; /* Couleur de fond blanche */
-    border: 10px solid #ccc; /* Bordure de 1 pixel solide avec la couleur #ccc */
-    border-radius: 1%;
-    padding: 10px; /* Espacement intérieur de 10 pixels */
-    display: none; /* Masque l'élément par défaut */
-    max-width: 300px; /* Largeur maximale de 300 pixels */
+    margin-right: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: l;
+    align-items: flex-end;
+    background-color: rgb(170, 197, 224);
+
 }
 
 

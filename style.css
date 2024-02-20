@@ -18,7 +18,7 @@ body {
     font-family: 'Montserrat', sans-serif; /* Utilisation de la police Montserrat ou une police sans-serif par défaut */
 
     justify-content: center;
-    background-image: linear-gradient(180deg, #ffffff 0%, #fda085 100%);
+    background-image: linear-gradient(180deg, #ffffff 0%, #b43daa 100%);
     
 }
 
@@ -35,7 +35,7 @@ nav {
 nav h1 {
     color: #b43daa; /* Couleur du texte rose */
     font-family: 'Pokemon Solid', sans-serif; /* Utilisation de la police Playfair Display ou une police serif par défaut */
-    font-size: 25px; /* Taille de police de 30 pixels */
+    font-size: 30px; /* Taille de police de 30 pixels */
 }
 
 /* Définition des styles pour les éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
