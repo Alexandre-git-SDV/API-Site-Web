@@ -3,15 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barre de Recherche - Region</title>
+  <title>Barre de Recherche - Région</title>
+  <link rel="icon" type="image/png" href=android-icon-192x192.png>
   <link rel="stylesheet" href="style_search_region.css">
 </head>
 <body>
 
-  <div class="search-class">
+  <nav>
+    <h1> Wiki pokemon </h1>
+    <div class="onglets">
+
+      <button><a href="mewdex.html"> Accueil </a></button>
+
+      <button><a href="https://www.canva.com/design/DAF9UvYmKUc/-9CN6wrKFvnxdTsFNCAnyA/edit?utm_content=DAF9UvYmKUc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"> Contact </a></button>
+
+      <button><a href="regionlist.html"> Liste Régions </a></button>
+        
+    </div>
+</nav>
+<header>
+  <h1> Mewdex - Régions </h1>
+</header>
+
+  <div class="search-class"></div>
   <input type="text" id="searchInput" placeholder="Rechercher...">
   <button id="searchButton" onclick="performSearch()">Rechercher</button>
-  </div>
 
   <div id="searchResults">
     <!-- Les résultats de la recherche seront affichés ici -->
@@ -19,6 +35,7 @@
   <div id="region-info"></div>
   <script src="app_region.js"></script>
   <p>Vous ne savez pas quelle région vous recherchez ? Pas de soucis ! <a href="regionlist.html">Découvrez la liste des régions ici</a>.</p>
+  
 
 </body>
 </html>

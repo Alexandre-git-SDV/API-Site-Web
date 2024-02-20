@@ -1,39 +1,43 @@
-async function request_async_pokemon(number) { // fonction asynchrone pour aller chercher les données du pokemon
+async function request_async_pokemon(number) { 
+  /* Entrée : number (int) -> le numéro du pokemon (par exemple 1 pour bulbizarre)
+     Sortie : data (json) -> les données du pokemon 
+     Fonction : Fonction asynchrone qui permet de faire une demande pour récupérer les données du pokemon */
   try { 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${number}`); // on attend la réponse du lien vers le pokemon
     const data = await response.json(); // on attend la conversion de la réponse en json
     
-    return data; 
+    return data; // On retourne les données
 
-  } catch (error) {
-    console.error('Erreur lors de la récupération des données du pokemon :', error); // on affiche l'erreur si il y en a une
+  } catch (error) { // Si il y a une erreur
+    console.error('Erreur lors de la récupération des données du pokemon :', error); // on affiche l'erreur dans la console pour l'indiquer à l'utilisateur
   }
 }
 
 async function pokemon_display(number) {
+  /* Entrée : number (int) -> le numéro du pokemon (par exemple 1 pour bulbizarre)
+     Sortie : Affichage des données du pokemon dans l'élément html pokemon-info (chaque information est divisée par une balise <div> comme basicinfo)
+     Fonction : Fonction asynchrone qui permet de récupérer les données du pokemon (en appellant la fonction request_async_pokemon) et de les afficher dans l'élément html pokemon-info */
   const pokemon_info = document.getElementById('pokemon-info'); // on récupère l'élément html où on va afficher les données
-  // const region_info = document.getElementById('region-info'); // on récupère l'élément html où on va afficher les données
-  // const region_data = await request_async_region(); // on attend les données de la région
-  const pokemon_data = await request_async_pokemon(number); // on attend les données du pokemon
+  const pokemon_data = await request_async_pokemon(number); // on attend les données du pokemon (avec l'appelle de la fonction asynchrone request_async_pokemon)
   const types = pokemon_data.types.map(type => type.type.name); // on récupère les types du pokemon
   const stat_name = pokemon_data.stats.map(stat => stat.stat.name); // on récupère les noms des stats du pokemon
   const stat = pokemon_data.stats.map(stat => stat.base_stat); // on récupère les stats du pokemon
 
-  const sprite = `<div class="sprite-container"><img src="${pokemon_data.sprites.front_default}" class="pokemon-sprite"></div>`;
-  const basicInfo = `<div class="basicinfo"> Nom : ${pokemon_data.name}</div><br>
-                     <div class="basicinfo"> Taille : ${pokemon_data.height} dm</div><br>
-                     <div class="basicinfo"> Poids : ${pokemon_data.weight} hg</div><br>
-                     <div class="basicinfo"> Types : ${types.join(', ')}</div>`;
+  const sprite = `<div class="sprite-container"><img src="${pokemon_data.sprites.front_default}" class="pokemon-sprite"></div>`; // On affiche le sprite du pokemon dans une div pokemon-sprite
+  const basicInfo = `<div class="basicinfo"> Nom : ${pokemon_data.name}</div>
+                     <div class="basicinfo"> Taille : ${pokemon_data.height} dm</div>
+                     <div class="basicinfo"> Poids : ${pokemon_data.weight} hg</div>
+                     <div class="basicinfo"> Types : ${types.join(', ')}</div>`; // On affiche les données basiques du pokemon dans une div basicinfo (nom, taille, poids, types)
   
 
-  let statsInfo = '<div class="stats-container">Statistiques :</div><br>'; 
+  let statsInfo = '<div class="stats-container">Statistiques :</div><br>'; // On affiche les stats du pokemon dans une div stats-container (pour l'instant uniquement le texte "Statistiques :")
 
   // Boucle pour afficher le nom de la stat puis la valeur de la stat
-  for (let i = 0; i < stat.length; i++) {
-    statsInfo += `<div class="stats-container">${stat_name[i]} :  ${stat[i]}</div><br>`;
+  for (let i = 0; i < stat.length; i++) { // Pour i allant de 0 à la longueur de stat (avec une incrémentation de 1)
+    statsInfo += `<div class="stats-container">${stat_name[i]} :  ${stat[i]}</div>`; // On ajoute le nom de la stat et la valeur de la stat dans la div stats-container
   }
 
-  const info = `${sprite}${basicInfo}<br><br>${statsInfo}`; 
+  const info = `${sprite}${basicInfo}<br><br>${statsInfo}`; // On regroupe les données dans une div info (sprite, basicinfo, statsInfo)
   pokemon_info.innerHTML = info; // on affiche les données dans l'élément html
 }
 
@@ -41,23 +45,35 @@ async function pokemon_display(number) {
 
 
 function performSearch() {
+  /* Entrée : Aucune
+     Sortie : Affichage des informations du pokemon recherché dans l'élément html pokemon-info
+     Fonction : Fonction qui permet de récupérer la valeur de la barre de recherche, de simuler une recherche et d'afficher les informations du pokemon recherché dans l'élément html pokemon-info */
+
   // Récupérer la valeur de la barre de recherche
   var searchTerm = document.getElementById('searchInput').value;
 
-  // Simuler une recherche 
+  // Simuler une recherche (appel de la fonction simulateSearch avec searchTerm en paramètre)
   simulateSearch(searchTerm);
 }
 
 async function simulateSearch(searchTerm) {
+  /* Entrée : searchTerm (string) -> le nom du pokemon recherché
+     Sortie : Affichage des informations du pokemon recherché dans l'élément html pokemon-info
+     Fonction : Fonction qui permet de simuler une recherche en parcourant une liste de pokemon et en affichant les informations du pokemon recherché dans l'élément html pokemon-info */
+
+  // Récupérer l'élément où on va afficher le résultat (ici searchResults)
   var final_result = document.getElementById('searchResults');
+  // Récupérer l'élément où on va afficher les informations du pokemon (ici pokemon-info)
   const pokemon_info = document.getElementById('pokemon-info');
+  // On vide l'élément pokemon-info (pour bien réinitialiser l'affichage à chaque recherche)
   pokemon_info.innerHTML = "";
 
- 
+  // Par défaut, on affiche "Aucun résultat correspondant." (le résultat restera celui là uniquement si aucun pokemon correspondant n'est trouvé dans la liste de pokemon)
   var result = "Aucun résultat correspondant.";
-  
+
+  // On initialise la liste des pokemons (de 1 à 151)
   const PokemonList = [
-    { number: 1, name1: 'bulbizarre' , name2: 'Bulbizarre', name3: 'BULBIZARRE'},
+    { number: 1, name1: 'bulbizarre' , name2: 'Bulbizarre', name3: 'BULBIZARRE'}, // number : numéro du pokemon, name1 : nom du pokemon en minuscule, name2 : nom du pokemon avec la première lettre en majuscule, name3 : nom du pokemon en majuscule
     { number: 2, name1: 'Herbizarre', name2: 'herbizarre', name3: 'HERBIZARRE'},
     { number: 3, name1: 'Florizarre', name2: 'florizarre', name3: 'FLORIZARRE'},
     { number: 4, name1: 'Salamèche', name2: 'salamèche', name3: 'SALAMÈCHE'},
@@ -210,54 +226,59 @@ async function simulateSearch(searchTerm) {
     { number: 151, name1: 'Mew', name2: 'mew', name3: 'MEW'},
   ];
   // Parcours de chaque pokemon dans pokemonList
-  for (let i = 0; i < PokemonList.length; i++) {
+  for (let i = 0; i < PokemonList.length; i++) { // De i allant de 0 à la longueur de PokemonList (avec une incrémentation de 1)
     // Si le nom du pokemon est égal à la recherche (en majuscule première lettre et le reste en minuscule : name1 ; tout en minuscule : name2, tout en majuscule : name3)
     if ((searchTerm.toLowerCase() === PokemonList[i].name1.toLowerCase()) || (searchTerm.toLowerCase() === PokemonList[i].name2.toLowerCase()) || (searchTerm.toLowerCase() === PokemonList[i].name3.toLowerCase())){
       try {
-        // Attendre que la promesse soit résolue avant de récupérer les résultats
+        // Attendre que la promesse soit résolue avant de récupérer les résultats (appel de pokemon_display avec le numéro du pokemon correspondant à la recherche)
         await pokemon_display(PokemonList[i].number);
-        result = "Affichage des informations de "+ PokemonList[i].name1 + " réussi.";
-        final_result.style.display = "block";
-      } catch (error) {
-        console.error('Erreur lors de l\'affichage des informations de : '+ PokemonList[i].name1 + error);
-        result = "Erreur lors de l'affichage des informations.";
+        result = "Affichage des informations de "+ PokemonList[i].name1 + " réussi."; // Message de succès pour prévenir l'utilisateur
+        final_result.style.display = "block"; // On affiche le résultat (en block pour que le message soit bien visible)
+      } catch (error) { // Si il y a une erreur
+        console.error('Erreur lors de l\'affichage des informations de : '+ PokemonList[i].name1 + error); // On prévient l'utilisateur en affichant l'erreur dans la console
+        result = "Erreur lors de l'affichage des informations."; // On change le résultat pour bien différencier un message prévenant l'utilisateur d'une erreur à un message le prévenant d'une absence de résultat
       }
     }
   }
   // Petit bonus trop lol  :D 
-  if ((searchTerm.toLowerCase() === "Carapute" || searchTerm.toLowerCase() === "carapute" || searchTerm.toLowerCase() === "CARAPUTE")){
-    const pokemon_info = document.getElementById('pokemon-info');
-    pokemon_info.innerHTML = `<img id="youtubeImage2" src="what.jpg" alt="NEVER GONNA GIVE YOU UP">`;
+  if ((searchTerm.toLowerCase() === "Carapute" || searchTerm.toLowerCase() === "carapute" || searchTerm.toLowerCase() === "CARAPUTE")){ // Même message de test que précédemment mais pour un "pokemon spécifique" 
+    const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations du pokemon
+    pokemon_info.innerHTML = `<img id="youtubeImage2" src="what.jpg" alt="THE ROCK">`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
 
-    // Sélectionner l'image spécifique par son ID
+    // Sélectionner l'image spécifique par son ID (ici youtubeImage2)
     const youtubeImage2 = document.getElementById('youtubeImage2');
 
     // Ajouter un gestionnaire d'événements clic à cette image spécifique
-    youtubeImage2.addEventListener('click', () => {
+    youtubeImage2.addEventListener('click', () => { // Si on clique sur l'image
         // Rediriger l'utilisateur vers le lien YouTube
         window.location.href = 'https://www.youtube.com/watch?v=EltoaN4U4Oc';
     });
   }
-  if ((searchTerm.toLowerCase() === "Rickrolled" || searchTerm.toLowerCase() === "rickrolled" || searchTerm.toLowerCase() === "RICKROLLED")) {
-    const pokemon_info = document.getElementById('pokemon-info');
-    pokemon_info.innerHTML = `<img id="youtubeImage" src="lol.jpg" alt="NEVER GONNA GIVE YOU UP">`;
+  if ((searchTerm.toLowerCase() === "Rickrolled" || searchTerm.toLowerCase() === "rickrolled" || searchTerm.toLowerCase() === "RICKROLLED")) { // Même message de test que précédemment mais pour un "pokemon spécifique"
+    const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations du pokemon
+    pokemon_info.innerHTML = `<img id="youtubeImage" src="lol.jpg" alt="NEVER GONNA GIVE YOU UP">`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
 
-    // Sélectionner l'image spécifique par son ID
+    // Sélectionner l'image spécifique par son ID (ici youtubeImage)
     const youtubeImage = document.getElementById('youtubeImage');
 
     // Ajouter un gestionnaire d'événements clic à cette image spécifique
-    youtubeImage.addEventListener('click', () => {
+    youtubeImage.addEventListener('click', () => { // Si on clique sur l'image
         // Rediriger l'utilisateur vers le lien YouTube
         window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     });
 }
-
-// Affichage du résultat dans l'élément approprié (avec innerHTML)
-final_result.innerHTML = result;
+  if ((searchTerm.toLowerCase() === "FireWalkWWithMe" || searchTerm.toLowerCase() === "firewalkwithme" || searchTerm.toLowerCase() === "FIREWALKWITHME")) { // Même test mais cette fois ci pour un mot secret (qui n'est pas un pokemon)
+    const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations voulu (ici pokemon-info)
+    pokemon_info.innerHTML = `<a href=https://docs.google.com/document/d/1B_K4spwvDqHtd69APZMfulJc7lOoZpcQmh7mqb_XXFg/edit?usp=sharing> Clique ici pour voir le contenu secret </a>`; // Afficher un lien spécifique dans l'élément pokemon-info (petite surprise)
 
 
 
 }
 
+// Affichage du résultat dans l'élément approprié (avec innerHTML, valable pour les 151 premiers pokemons + les 2 bonus trop quoicou lol)
+final_result.innerHTML = result;
+}
+
+// Si tu es arrivé jusqu'ici, bravooooo !!!! :D Sache que plusieurs easter eggs sont disponibles sur le site notamment sur une série connu des années 90, je te conseille d'aller faire un tour du côté des listes pour les trouver ;)
 
 

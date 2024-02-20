@@ -1,122 +1,88 @@
+/*Importation des polices */
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 html{
-     scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Montserrat', sans-serif;
-    align-items: center; 
+       
+
+/* Définition des styles pour l'élément <html> */
+html {
+    scroll-behavior: smooth; /* Comportement de défilement fluide */
+}
+
+/* Définition des styles pour l'élément <body> */
+body {
+
+    font-family: 'Montserrat', sans-serif; 
+    margin: 50px;/* Marge extérieure nul */
+    padding: 50px;/* Espacement intérieur nul */
+    font-family: 'Montserrat', sans-serif;/* Utilisation de la police Montserrat ou une police sans-serif par défaut */
+    align-items: center;
     min-height: 100vh;
-}
-nav{
-    display:flex;
-    flex-wrap:wrap;
+    background-image: linear-gradient(180deg, #e0dede 0%, #b43daa  50%, #ff7ceb 100%);
     justify-content: center;
-    align-items: center;
-    border-bottom: 5px solid #b43daa;
-}
-nav h1{
-    color: #b43daa;
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-}
-nav .onglets{
-    margin-top: 3px;
-    margin-left: 300px;
-}
-nav .onglets a{
-    text-decoration: none;
-    color: #000;
-    margin-right: 10px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 5px;
+    
+    
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #000;
-    background-size: cover;
-    color: #fff;
-    padding: 40px;
-}
-header h1{
-    font-family: 'Playfair Display', serif;
-    font-size: 50px;
-}
-header h4{
-    margin-top: -20px;
-    font-size: 20px;
-    text-align: center;
-    border-bottom: 1px solid #fff;
-}
-header button{
-    padding: 10px 20px;
-    background-color: #fff;
-    color:#000;
-    border:none;
-    margin-bottom: 30px;
-    outline:none;
-    font-size: 20px;
-    font-family: 'Playfair Display', serif;
-    cursor: pointer;
+/* Définition des styles pour l'élément <nav> */
+nav {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Les objets sont centrés horizontalement */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    border-bottom: 5px solid #b43daa; /* Bordure inférieure de 5 pixels solide avec la couleur #b43daa */
 }
 
-.main{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.main .content .card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom:20px;
-}
-.main .content .card .left{
-   flex: 0 0 30%;
-   padding: 20px;
-   background-color:black;
-   color:#fff;
-}
-.main .content .card .right img{
-    height:300px;
-    width: 400px;
-    margin-top: 5px;
+nav {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-wrap: wrap; /* Les objets vont s'envelopper sur plusieurs lignes si nécessaire */
+    justify-content: center; /* Les objets sont centrés horizontalement */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    border-bottom: 5px solid #b43daa; /* Bordure inférieure de 5 pixels solide avec la couleur #b43daa */
 }
 
-footer{
-    margin-top: 40px;
-    border-top: 5px solid #b43daa;
-    background-color: rgb(0, 0, 0);
-    color: #fff;
-    padding: 30px 100px;;
+/* Définition des styles pour les titres h1 à l'intérieur de l'élément <nav> */
+nav h1 {
+    color: #b43daa; /* Couleur du texte rose */
+    font-family: 'Pokemon Solid', sans-serif; /* Utilisation de la police Playfair Display ou une police serif par défaut */
+    font-size: 25px; /* Taille de police de 30 pixels */
 }
-footer h1{
-    font-family: 'Playfair Display', serif;
-    border-bottom: 1px solid white;
-    width: 20%;
-    padding-bottom: 5px;
+
+/* Définition des styles pour les éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
+nav .onglets {
+    margin-top: 3px; /* Marge supérieure de 3 pixels */
+    margin-left: 150px; /* Marge gauche de 300 pixels */
 }
-footer .services{
-    margin-top: -10px;
-    display:flex;
-    flex-wrap:wrap;
+
+/* Définition des styles pour les liens <a> à l'intérieur des éléments avec la classe 'onglets' à l'intérieur de l'élément <nav> */
+nav .onglets a {
+    text-decoration: none; /* Pas de décoration de texte (soulignement par défaut) */
+    color: #000; /* Couleur du texte noir */
+    margin-right: 10px; /* Marge droite de 10 pixels */
+    border-bottom: 1px solid #000; /* Bordure inférieure de 1 pixel solide avec la couleur noire */
+    padding-bottom: 5px; /* Espacement intérieur inférieur de 5 pixels */
 }
-footer .services .service{
-    margin-right: 30px;
+
+
+/* Définition des styles pour l'élément <header> */
+header {
+    display: flex; /* Utilisation du modèle de disposition flexbox */
+    flex-direction: column; /* Les objets seront disposés en colonne */
+    align-items: center; /* Alignement des objets au centre sur l'axe transversal */
+    background: #000; /* Couleur de fond noire */
+    background-size: cover; /* La taille de l'image de fond est ajustée pour couvrir tout l'élément */
+    color: #fff; /* Couleur du texte blanc */
+    padding: 25px; /* Espacement intérieur de 25 pixels */
 }
-footer .services .service p{
-    max-width: 300px;
-}
-footer #contact{
-    color: #9bcdff;
-}
+
+
+
 
 @media screen and (max-width:680px){
     nav .onglets {
@@ -139,6 +105,55 @@ footer #contact{
     }
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 300px;
+    gap: 10px;
+}
+
+/* Style pour chaque nom de Pokémon */
+.basicinfo {
+    display: grid;
+    margin-right: 10px;
+    font-weight: bold;
+    background-color: rgb(137, 167, 197);
+    border-radius: 1%;
+}
+
+
+
+/* Style pour les stats */
+.location-container {
+    display: grid;
+    margin-right: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: l;
+    align-items: flex-end;
+    background-color: rgb(175, 0, 172);
+
+
+}
+
+
+
+/* Style pour le conteneur des attaques de Pokémon */
+.version-container {
+    display: grid;
+    margin-right: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: l;
+    align-items: flex-end;
+    background-color: rgb(170, 197, 224);
+
+}
+
+
+
+
+/* Styles pour la barre de recherche */
 #searchInput {
     padding: 8px;
     width: 200px;
@@ -153,9 +168,6 @@ footer #contact{
     text-align: center;
     margin-top: 20px; 
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
   
 .search-results {

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 html{
     scroll-behavior: smooth;
 }
@@ -20,7 +22,7 @@ body {
     font-family: 'Montserrat', sans-serif;/* Utilisation de la police Montserrat ou une police sans-serif par défaut */
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(180deg, #3f3f3f 0%, #b43daa  50%, #ff7ceb 100%);
+    background-image: linear-gradient(180deg, #e0dede 0%, #b43daa  50%, #ff7ceb 100%);
     justify-content: center;
     
     
@@ -74,8 +76,10 @@ header {
     background: #000; /* Couleur de fond noire */
     background-size: cover; /* La taille de l'image de fond est ajustée pour couvrir tout l'élément */
     color: #fff; /* Couleur du texte blanc */
-    padding: 40px; /* Espacement intérieur de 40 pixels */
+    padding: 25px; /* Espacement intérieur de 25 pixels */
 }
+
+
 
 
 @media screen and (max-width:680px){
@@ -110,7 +114,7 @@ header {
 /* Style pour l'élément contenant les noms de Pokémon */
 .pokemonList {
     display: grid;
-    align-items: center;
+    align-items: left;
     margin-top: 20px;
     grid-column: 2 / 4; /* début et fin (exclue) */
     grid-row: 1;
@@ -120,11 +124,11 @@ header {
 /* Style pour chaque nom de Pokémon */
 .basicinfo {
     display: grid;
-    margin-left: 10px;
+    margin-right: 10px;
     font-weight: bold;
-    grid-column: 2 / 4; /* début et fin (exclue) */
+    grid-column: 3; /* position 3 */
     grid-row: 1;
-    background-color: slategray;
+    background-color: rgb(137, 167, 197);
 }
 
 /* Style pour l'image de Pokémon */
@@ -133,8 +137,8 @@ header {
     height: 960px; /* Ajustez la hauteur selon vos besoins */
     width: auto; /* La largeur s'ajustera automatiquement pour conserver les proportions */
     float: left;
-    margin-right: 10px;
-    grid-column: 2 / 4; /* début et fin (exclue) */
+    margin-left: 10px;
+    grid-column: 4; /* position 4 fin */
     grid-row: 1;
     background-color: slategray;
 }
@@ -149,7 +153,7 @@ header {
     align-items: flex-end;
     grid-column: 2 / 4; /* début et fin (exclue) */
     grid-row: 1;
-    background-color: rgb(175, 0, 172);
+    background-color: rgb(190, 30, 187);
 
 }
 
@@ -159,7 +163,6 @@ header {
 .attack-container {
     /* fait moi un bloc pour en bas à droite de ma page pour mettre une longue liste d'attacks */
     display: grid;
-    position: absolute;
     bottom: 0;
     right: 0;
     background-color: #fff; /* Couleur de fond blanche */
