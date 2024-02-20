@@ -269,37 +269,15 @@ async function simulateSearch(searchTerm) {
 }
   if ((searchTerm.toLowerCase() === "FireWalkWWithMe" || searchTerm.toLowerCase() === "firewalkwithme" || searchTerm.toLowerCase() === "FIREWALKWITHME")) { // Même message de test que précédemment mais pour autre chose 
     const pokemon_info = document.getElementById('pokemon-info'); // Récupérer l'élément où on va afficher les informations du pokemon
-    pokemon_info.innerHTML = `<img id="youtubeImage3" src="fire.jpg" alt="FIRE WALK WITH ME">`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
+    pokemon_info.innerHTML = `<a href=https://docs.google.com/document/d/1B_K4spwvDqHtd69APZMfulJc7lOoZpcQmh7mqb_XXFg/edit?usp=sharing> Clique ici pour voir le contenu secret </a>`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
 
-    // Sélectionner l'image spécifique par son ID (ici youtubeImage3)
-    const youtubeImage3 = document.getElementById('youtubeImage3');
 
-    // Ajouter un gestionnaire d'événements clic à cette image spécifique
-    youtubeImage3.addEventListener('click', () => { // Si on clique sur l'image
-        // Rediriger l'utilisateur vers le lien YouTube
-        window.location.href = 'https://docs.google.com/document/d/1B_K4spwvDqHtd69APZMfulJc7lOoZpcQmh7mqb_XXFg/edit?usp=sharing';
-    });
+
 }
 
 // Affichage du résultat dans l'élément approprié (avec innerHTML, valable pour les 151 premiers pokemons + les 2 bonus trop quoicou lol)
 final_result.innerHTML = result;
 }
 
-/* 
-The owls are not what they seem
-*/
 
 
-
-// Si tu es arrivé jusqu'ici, bravo ! En petit bonus voici un poème pour toi :
-
-/* 
-This is the water
-And this is the well.
-Drink full and descend.
-The horse is the white of the eyes and dark within 
-*/ 
-
-// Si tu as la référence bravooooo :D Tu as vraiment les cramptés dans ce cas là :D 
-
-// Un autre easter egg est disponible dans un autre fichier .js sauras tu le trouver ? 

@@ -1,9 +1,6 @@
 function getPokemonList(){
-    /* Entrée : aucune
-       Sortie : affichage de la liste des pokemons dans l'élément html pokemon-list
-       Fonction : Fonction qui permet d'afficher la liste des pokemons dans l'élément html pokemon-list */
     const PokemonList = [
-        { number: 1, name: 'Bulbizarre', type: ['Plante', 'Poison'] }, // number : numéro du pokemon, name : nom du pokemon, type : type du pokemon
+        { number: 1, name: 'Bulbizarre', type: ['Plante', 'Poison'] },
         { number: 2, name: 'Herbizarre', type: ['Plante', 'Poison'] },
         { number: 3, name: 'Florizarre', type: ['Plante', 'Poison'] },
         { number: 4, name: 'Salamèche', type: ['Feu'] },
@@ -68,6 +65,7 @@ function getPokemonList(){
         { number: 63, name: 'Abra', type: ['Psy'] },
         { number: 64, name: 'Kadabra', type: ['Psy'] },
         { number: 65, name: 'Alakazam', type: ['Psy'] },
+        { number: 66, name: 'Machoc', type: ['Combat'] },
         { number: 66, name: 'Machoc', type: ['Combat'] },
         { number: 67, name: 'Machopeur', type: ['Combat'] },
         { number: 68, name: 'Mackogneur', type: ['Combat'] },
@@ -139,46 +137,40 @@ function getPokemonList(){
         { number: 134, name: 'Aquali', type: ['Eau'] },
         { number: 135, name: 'Pyroli', type: ['Feu'] },
         { number: 136, name: 'Voltali', type: ['Électrique'] },
-        { number: 137, name: 'Porygon', type: ['Normal'] },
-        { number: 138, name: 'Amonita', type: ['Roche', 'Eau'] },
-        { number: 139, name: 'Amonistar', type: ['Roche', 'Eau'] },
-        { number: 140, name: 'Kabuto', type: ['Roche', 'Eau'] },
-        { number: 141, name: 'Kabutops', type: ['Roche', 'Eau'] },
-        { number: 142, name: 'Ptéra', type: ['Roche', 'Vol'] },
-        { number: 143, name: 'Ronflex', type: ['Normal'] },
-        { number: 144, name: 'Artikodin', type: ['Glace', 'Vol'] },
-        { number: 145, name: 'Électhor', type: ['Électrique', 'Vol'] },
-        { number: 146, name: 'Sulfura', type: ['Feu', 'Vol'] },
-        { number: 147, name: 'Minidraco', type: ['Dragon'] },
-        { number: 148, name: 'Draco', type: ['Dragon'] },
-        { number: 149, name: 'Dracolosse', type: ['Dragon', 'Vol'] },
-        { number: 150, name: 'Mewtwo', type: ['Psy'] },
-        { number: 151, name: 'Mew', type: ['Psy'] },
+        { number: 137, name: 'Pyroli', type: ['Feu'] },
+        { number: 138, name: 'Porygon', type: ['Normal'] },
+        { number: 139, name: 'Amonita', type: ['Roche', 'Eau'] },
+        { number: 140, name: 'Amonistar', type: ['Roche', 'Eau'] },
+        { number: 141, name: 'Kabuto', type: ['Roche', 'Eau'] },
+        { number: 142, name: 'Kabutops', type: ['Roche', 'Eau'] },
+        { number: 143, name: 'Ptéra', type: ['Roche', 'Vol'] },
+        { number: 144, name: 'Ronflex', type: ['Normal'] },
+        { number: 145, name: 'Artikodin', type: ['Glace', 'Vol'] },
+        { number: 146, name: 'Électhor', type: ['Électrique', 'Vol'] },
+        { number: 147, name: 'Sulfura', type: ['Feu', 'Vol'] },
+        { number: 148, name: 'Minidraco', type: ['Dragon'] },
+        { number: 149, name: 'Draco', type: ['Dragon'] },
+        { number: 150, name: 'Dracolosse', type: ['Dragon', 'Vol'] },
+        { number: 151, name: 'Mewtwo', type: ['Psy'] },
+        { number: 152, name: 'Mew', type: ['Psy'] },
 ];
-    const pokemonListDiv = document.getElementById('pokemonList');
-    const ul = document.createElement('ul');
-
-    PokemonList.forEach(pokemon => {
-        const li = document.createElement('li');
-        li.textContent = `${pokemon.number}: ${pokemon.name} - ${pokemon.type.join(', ')}`;
-        ul.appendChild(li);
-    });
-
-    pokemonListDiv.appendChild(ul);
+    for (let i = 0; i < PokemonList.length; i++) {
+        document.write(`<li>${PokemonList[i].number} : ${PokemonList[i].name} - ${PokemonList[i].type.join(', ')}</li>`);
+    }
+    document.write('</ul>');
 }
-
 getPokemonList();
 
-const pokemonListDiv = document.getElementById('pokemonList');
-const img = document.createElement('img');
-img.src = 'welcome.jpg';
-img.alt = 'WELCOME TO TWIN PEAKS';
-img.style.width = '200px';
-img.style.height = 'auto';
-pokemonListDiv.insertAdjacentElement('afterend', img);
+document.addEventListener("DOMContentLoaded", function() {
+    const trigger = document.getElementById('trigger');
+    const hidden = document.getElementById('hidden');
 
-img.addEventListener('click', function() {
-    window.location.href = 'https://docs.google.com/document/d/1tyGliCe7tMOj2Ssx03d7LmCjko5Fv42EA-_jwttCQI8/edit?usp=sharing';
+    trigger.addEventListener('click', function() {
+        hidden.style.display = 'block';
+        trigger.style.display = 'none'; // Cacher le mot "secret" après avoir cliqué pour afficher le lien
+    });
+
+    
 });
 ``
 

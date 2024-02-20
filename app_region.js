@@ -93,16 +93,10 @@ async function region_display(number) {
     }
     if ((searchTerm.toLowerCase() === "Woodsman" || searchTerm.toLowerCase() === "woodsman" || searchTerm.toLowerCase() === "WOODSMAN")) { // Même message de test que précédemment mais pour autre chose 
       const pokemon_info = document.getElementById('region-info'); // Récupérer l'élément où on va afficher les informations du pokemon
-      pokemon_info.innerHTML = `<img id="youtubeImage" src="woods.jpg" alt="WOODSMAN">`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
+      pokemon_info.innerHTML = `<a href="https://docs.google.com/document/d/1ZZvMIHczxUnVhI_yS7DdDKRiWVDKdXd1JarZVfiO2IA/edit?usp=sharing">Clique ici pour voir le contenu secret</a>`; // Afficher une image spécifique dans l'élément pokemon-info (petite surprise)
   
-      // Sélectionner l'image spécifique par son ID (ici youtubeImage3)
-      const youtubeImage = document.getElementById('youtubeImage');
   
-      // Ajouter un gestionnaire d'événements clic à cette image spécifique
-      youtubeImage.addEventListener('click', () => { // Si on clique sur l'image
-          // Rediriger l'utilisateur vers le lien YouTube
-          window.location.href = 'https://docs.google.com/document/d/1ZZvMIHczxUnVhI_yS7DdDKRiWVDKdXd1JarZVfiO2IA/edit?usp=sharing';
-      });
+
   }
     // Affichage du résultat dans l'élément approprié (avec innerHTML, valable pour les 8 régions )
     final_result.innerHTML = result;
@@ -110,15 +104,3 @@ async function region_display(number) {
   
   }
 
-// Si tu es arrivé jusqu'ici (encore une fois) , bravo ! En petit bonus voici un (autre) poème pour toi : 
-
-/* 
-Through the darkness of future past,
-The magician longs to see.
-One chants out between two worlds,
-Fire walk with me.
-*/ 
-
-// Si tu as la référence, alors bravooooo :D Tu as doublement les cramptés dans ce cas là :D 
-
-// Si tu ne l'as toujours pas alors je te laisse chercher sur internet, il n'y a pas que Pokemon dans la vie tu sais :D 
