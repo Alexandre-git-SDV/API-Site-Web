@@ -1,10 +1,13 @@
+/* Ce fichier CSS est relié au fichier HTML search */
+
+/*Importation des polices */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Comportement de défilement fluide */
 }
        
 
@@ -22,7 +25,7 @@ body {
     font-family: 'Montserrat', sans-serif;/* Utilisation de la police Montserrat ou une police sans-serif par défaut */
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(180deg, #e0dede 0%, #b43daa  50%, #ff7ceb 100%);
+    background-image: linear-gradient(180deg, #e0dede 0%, #b43daa  50%, #ff7ceb 100%); /* Définition d'un dégradé linéaire de couleur */
     justify-content: center;
     
     
@@ -82,28 +85,28 @@ header {
 
 
 
-@media screen and (max-width:680px){
-    nav .onglets {
+@media screen and (max-width:680px){ /* Si la largeur de l'écran est inférieure ou égale à 680 pixels */
+    nav .onglets { /* Appliquer les styles suivants à l'élément avec la classe 'onglets' à l'intérieur de l'élément <nav> */
         margin-left: 0px;
         margin-bottom: 20px;
     }
-    .main .card {
+    .main .card { /* Définition des styles pour les éléments avec la classe 'card' à l'intérieur de l'élément avec la classe 'main' */
         margin: 10px;
     }
-    .main .content .card .right img{
+    .main .content .card .right img{ /* Définition des styles pour les images à l'intérieur des éléments avec la classe 'right' à l'intérieur des éléments avec la classe 'card' à l'intérieur de l'élément avec la classe 'content' à l'intérieur de l'élément avec la classe 'main' */
         height:200px;
         width: 100%;
         margin-top: -0px;
     }
-    .main .content .card{
+    .main .content .card{ /* Définition des styles pour les éléments avec la classe 'card' à l'intérieur de l'élément avec la classe 'content' à l'intérieur de l'élément avec la classe 'main' */
         display: block;
     }
-    footer{
+    footer{ /* Définition des styles pour l'élément <footer> */
         padding: 30px;
     }
 }
 
-.wrapper {
+.wrapper { /* Définition des styles pour l'élément avec la classe 'wrapper' */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 300px;
@@ -118,7 +121,7 @@ header {
     margin-top: 20px;
     grid-column: 2 / 4; /* début et fin (exclue) */
     grid-row: 1;
-    background-color: slategray;
+
 }
 
 /* Style pour chaque nom de Pokémon */
@@ -133,14 +136,16 @@ header {
 
 /* Style pour l'image de Pokémon */
 .sprite { /* fait moi un bloc pour mettre l'image en haut à gauche de ma  */
-    display: grid;
-    height: 960px; /* Ajustez la hauteur selon vos besoins */
-    width: auto; /* La largeur s'ajustera automatiquement pour conserver les proportions */
-    float: left;
-    margin-left: 10px;
-    grid-column: 4; /* position 4 fin */
-    grid-row: 1;
-    background-color: slategray;
+    color:white;
+    text-shadow: #cce4f4 0px 0px 10px;
+    font-size: 2.3em;
+    text-align:center;
+    border: solid white 3px;
+    background-color:black;
+    margin-top: 50px;
+    overflow: scroll;
+    height:200px;
+    overflow-x: hidden;
 }
 
 /* Style pour les stats */
