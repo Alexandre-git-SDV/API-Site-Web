@@ -1,8 +1,13 @@
+/* Ce fichier CSS est relié au fichier HTML regionlist et pokemonlist */
+
+/*Importation des polices */
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
-html{
-    scroll-behavior: smooth;
+
+html{ 
+    scroll-behavior: smooth; /* Comportement de défilement fluide */
 }
        
 
@@ -20,7 +25,7 @@ body {
     font-family: 'Montserrat', sans-serif;/* Utilisation de la police Montserrat ou une police sans-serif par défaut */
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(180deg, #bbbbbb 0%, #b43daa  50%, #ff7ceb 100%);
+    background-image: linear-gradient(180deg, #bbbbbb 0%, #b43daa  50%, #ff7ceb 100%); /* Définition d'un dégradé linéaire de couleur */
     justify-content: center;
     
     
@@ -28,12 +33,10 @@ body {
 
 .wrapper {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap : warp
 }
 
 .wrapper > div {
-    /*flex: 1;*/
     border: 4px solid gray;
     background: #eee;
     width: 500px;
